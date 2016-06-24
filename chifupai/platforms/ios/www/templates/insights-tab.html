@@ -1,0 +1,50 @@
+<ion-view view-title="" hide-nav-bar="true">
+<ion-content class="" ng-init="Ctrl.init()">
+	<div class="page no-navbar" data-page="insights">
+		<div class="page-content infinite-scroll" style="background-color: #fff;">
+			<div id="insightHead"></div>
+			<div id="insightTop" style="margin-bottom: 0px;"></div>
+			<div id="insightlist" class="list-block media-list" style="margin-top:10px;"></div>
+			<!--地区列表-->
+				<div class="area">
+                                   <span class="" id="insightAll" ng-click="getInfosList(0)"><div class="insidiv" ng-class="isActive(0)">全部</div></span> 
+                                        <span class="insispan insightArea1" ng-repeat="a in areasList" ng-click="getInfosList({{a.areaID}})">
+                                           <div class="insidiv" ng-class="isActive({{a.areaID}})">{{a.areaValue}}</div>
+                                        </span> 
+				</div>
+			<!--顶部新闻-->
+                        <a ng-repeat="t in infoTop" href="#/insights/insights-detail?extURI={{t.infoLink | encodeURI}}" class="item-link item-content insi-linktop"">
+					<div style="position: relative;">
+						<img class="insimg" ng-src="{{t.infoImg}}" />
+						<div class="toptitle" style="position:absolute;bottom:10px;">
+							<div style="margin-left: 20px;margin-right: 20px;">
+								{{t.infoTitle}}&nbsp;&nbsp;【{{t.infoDate}}】
+							</div>
+						</div>
+					</div>
+
+				</a>
+			<!--情报列表-->
+				<ul  ng-repeat="t in infosList">
+					<li>
+                                        <a href="#/insights/insights-detail?extURI={{t.infoLink | encodeURI}}" class="item-link item-content insi-link">
+							<div class="item-media"><img ng-src="{{t.infoImg}}" width="80"></div>
+							<div class="item-inner">
+								<div class="item-title">
+									<div class="item-title" style="white-space: normal;">{{t.infoTitle}}</div>
+
+								</div>
+
+								<div class="item-text" style="height: 20px;">{{t.infoDate}}<span class="listmar" id="areaSegment">{{t.infoAreaValue}}</span></div>
+							</div>
+						</a>
+					</li>
+
+				</ul>
+			<div class="infinite-scroll-preloader">
+				<div class="preloader"></div>
+			</div>
+		</div>
+	</div>
+  </ion-content>
+</ion-view>

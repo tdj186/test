@@ -1,0 +1,110 @@
+<ion-view view-title="" hide-nav-bar="true">
+  <ion-content class="" style="" ng-init="Ctrl.init()">
+  <!-- YOUR CODE HERE -->
+      <div class="page no-toolbar no-navbar" data-page="allocation">
+              <div class="page-content index-bg">
+                      <a href="html/recommend/recommend-bar.html" class="tel-button home-button"> <i class="fa fa-home"></i> </a>
+                      <a href="tel:02151215988" class="tel-button external"> <i class="fa fa-headphones"></i> 咨询 </a>
+                      <div class="allocate-risk" id="allocaterisk1">
+                      </div>
+                      <div class="allocate-slider">
+                              <div class="allocate-tip">
+                                      <div class="allocate-rpn" id="portfName"></div>
+                                      <div class="allocate-info"><span id="tjpz">推荐资产配置</span> <a class="acco-tip"> <i class="fa fa-info-circle"></i> </a></div>
+                              </div>
+                              <div class="allocate-fund-mix">
+                                      <div style="height: 100%;width: 100%;" class="swiper-container swiper-init" data-pagination=".swiper-pagination">
+                                              <div class="swiper-pagination"></div>
+                                              <div class="swiper-wrapper">
+                                                      <div class="swiper-slide">
+
+                                                              <div class="list-block allocate-scoll">
+                                                                      <div class="allocate-list-title"><span>基金组合</span></div>
+                                                                      <ul id="allocation-list">
+                                                                              <script type="text/template" id="alloListTemplate">
+                                                                                      {{#each fundsList}}
+                                                                                      <a href="html/fund/fund-details.html?ISIN={{isin}}">
+                                                                                              <li class="item-content item-link">
+                                                                                                      <div class="item-media"> <i class="fa fa-circle {{topcolor}}"></i> </div>
+                                                                                                      <div class="item-inner">
+                                                                                                              <div class="item-title" style="white-space: normal;">{{fundNameC}}</div>
+                                                                                                              <div class="item-after">{{scale}}%</div>
+                                                                                                      </div>
+                                                                                              </li>
+                                                                                      </a>
+                                                                                      {{/each}}
+                                                                              </script>
+                                                                      </ul>
+
+                                                              </div>
+                                                      </div>
+                                                      <div class="swiper-slide">
+                                                              <div class="allocate-list-title"><span>组合业绩</span></div>
+                                                              <div class="no-gutter fund-charts">
+                                                                      <div class="buttons-row">
+                                                                              <a class="button tab-link active" href="#tab21"> 月 </a>
+                                                                              <a class="button tab-link" href="#tab22"> 季 </a>
+                                                                              <a class="button tab-link" href="#tab23"> 半年 </a>
+                                                                              <a class="button tab-link" href="#tab24"> 年 </a>
+                                                                              <a class="button tab-link" href="#tab25"> 试算 </a>
+                                                                      </div>
+                                                                      <div class="tabs">
+                                                                              <div id="tab21" class="tab active">
+                                                                                      <div class="content-block">
+                                                                                              <div class="no-data-display">暂无数据</div>
+                                                                                              <div id="line_chart_21" class="chart-zhe"></div>
+                                                                                      </div>
+                                                                              </div>
+                                                                              <div id="tab22" class="tab">
+                                                                                      <div class="content-block">
+                                                                                              <div class="no-data-display">暂无数据</div>
+                                                                                              <div id="line_chart_22" class="chart-zhe"></div>
+                                                                                      </div>
+                                                                              </div>
+                                                                              <div id="tab23" class="tab">
+                                                                                      <div class="content-block">
+                                                                                              <div class="no-data-display">暂无数据</div>
+                                                                                              <div id="line_chart_23" class="chart-zhe"></div>
+                                                                                      </div>
+                                                                              </div>
+                                                                              <div id="tab24" class="tab">
+                                                                                      <div class="content-block">
+                                                                                              <div class="no-data-display">暂无数据</div>
+                                                                                              <div id="line_chart_24" class="chart-zhe"></div>
+                                                                                      </div>
+                                                                              </div>
+                                                                              <div id="tab25" class="tab">
+                                                                                      <div class="content-block">
+                                                                                              <div class="no-data-display">该时间段暂无数据，请手动选择其他时间段</div>
+                                                                                              <div id="line_chart_25" class="chart-zheyj"></div>
+                                                                                              <div class="list-block pingg4sj" style="margin-bottom: 0px;margin-top: 0px;">
+                                                                                                      <ul>
+                                                                                                              <li>
+                                                                                                                      <div class="item-content">
+                                                                                                                              <div class="item-inner">
+                                                                                                                                      <div class="item-input">
+                                                                                                                                              <input style="width: 80%;float: left;" type="text" placeholder="点击该区域选择初始时间和结束时间"  readonly="readonly"  id="calendar-range2">
+                                                                                                                                              <span style="width: 50px;float: right;margin-top: 6px;font-size: 10px;" class="button disabled active" id="datasyDetail2">确定</span>
+                                                                                                                                      </div>
+                                                                                                                              </div>
+                                                                                                                      </div>
+                                                                                                              </li>
+                                                                                                      </ul>
+                                                                                              </div>
+                                                                                      </div>
+                                                                              </div>
+
+                                                                      </div>
+
+                                                              </div>
+
+                                                      </div>
+
+                                              </div>
+                                      </div>
+                              </div>
+                      </div>
+              </div>
+      </div>
+  </ion-content>
+</ion-view>

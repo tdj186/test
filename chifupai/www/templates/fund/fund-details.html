@@ -1,0 +1,132 @@
+<ion-view hide-nav-bar="false">
+	<ion-content class="" ng-init="Ctrl.init()">
+
+		<!-- 基础信息 -->
+		<div class="fund-summary">
+			<h3>{{data.fundNameC}}</h3>
+			<p> {{data.fundName}}
+
+				<a href="#" class="com-but ytj-but"><span style="letter-spacing:2px;">已添加</span></a>
+				<a href="#fundCompare?ISIN={{data.isin}}&fundNameC={{data.fundNameC}}"><span class="com-but">+比</span></a>
+
+			</p>
+			<p> ISIN: {{data.isin}}
+			</p>
+
+		</div>
+		<!-- 其他信息 -->
+		<div class="row no-gutter fund-info">
+			<div class="col-33 col-center">
+				{{data.areaValue}}
+				<br><span>区域类型</span>
+			</div>
+			<div class="col-33 col-center">
+				{{data.investmentValue}}
+				<br><span>投资类型</span>
+			</div>
+			<div class="col-33 col-center">
+				{{data.rankValue}}
+				<br><span>晨星评级</span>
+			</div>
+		</div>
+		<!-- 净值信息 -->
+		<div class="row no-gutter fund-info">
+			<div class="col-50 col-center">
+				{{data.fundNet}}
+				<br><span>单位净值</span>
+			</div>
+			<div class="col-50 col-center">
+				<i class="{{incsClass}}">{{data.fundIncsytd}}&#37;</i>
+				<br><span>日涨跌幅</span>
+			</div>
+		</div>
+		<!-- 增长率图表信息 -->
+		<div class="no-gutter fund-charts">
+			<div class="buttons-row" style="width: 90%;margin: auto;">
+				<a class="button tab-link active" href="#tab1">月</a>
+				<a class="button tab-link" href="#tab2"> 季 </a>
+				<a class="button tab-link" href="#tab3"> 半年 </a>
+				<a class="button tab-link" href="#tab4"> 年 </a>
+				<a class="button tab-link" href="#tab5"> 试算 </a>
+			</div>
+
+		</div>
+		<!-- 基金业绩 -->
+		<div class="row no-gutter fund-info">
+			<div class="col-50 col-center"> 过往收益 </div>
+			<div class="col-50 col-center"> 年度收益 </div>
+		</div>
+		<div class="no-gutter fund-table">
+			<div class="row no-gutter fund-table-header">
+				<div class="col-25 col-center"> 期限 </div>
+				<div class="col-25 col-center"> 回报 </div>
+				<div class="col-25 col-center"> 年份 </div>
+				<div class="col-25 col-center"> 回报 </div>
+			</div>
+			<div class="row no-gutter fund-table-list">
+				<div class="col-25 col-center"> 近一个月 </div>
+				<div class="col-25 col-center" ng-class="{true:'redra',false:'greenra'}[data.fundIncsm>0]"> {{data.fundIncsm==''?"--":data.fundIncsm}}&#37; </div>
+				<div class="col-25 col-center"> {{fundIncsYsList[0].fundIncsYears}}</div>
+				<div class="col-25 col-center" ng-class="{true:'redra',false:'greenra'}[fundIncsYsList[0].fundIncsYearsValue>0]">
+					{{fundIncsYsList[0].fundIncsYearsValue==''?"--":fundIncsYsList[0].fundIncsYearsValue}}&#37; </div>
+			</div>
+			<div class="row no-gutter fund-table-list">
+				<div class="col-25 col-center"> 今年以来 </div>
+				<div class="col-25 col-center" ng-class="{true:'redra',false:'greenra'}[data.fundIncsthisy>0]"> {{data.fundIncsthisy==''?"--":data.fundIncsthisy}}&#37; </div>
+				<div class="col-25 col-center"> {{fundIncsYsList[1].fundIncsYears}} </div>
+				<div class="col-25 col-center" ng-class="{true:'redra',false:'greenra'}[fundIncsYsList[1].fundIncsYearsValue>0]"> {{fundIncsYsList[1].fundIncsYearsValue==''?"--":fundIncsYsList[1].fundIncsYearsValue}}&#37; </div>
+			</div>
+			<div class="row no-gutter fund-table-list">
+				<div class="col-25 col-center"> 近一年 </div>
+				<div class="col-25 col-center" ng-class="{true:'redra',false:'greenra'}[data.fundIncsy>0]"> {{data.fundIncsy==''?"--":data.fundIncsy}}&#37; </div>
+				<div class="col-25 col-center"> {{fundIncsYsList[2].fundIncsYears}}</div>
+				<div class="col-25 col-center" ng-class="{true:'redra',false:'greenra'}[fundIncsYsList[2].fundIncsYearsValue>0]"> {{fundIncsYsList[2].fundIncsYearsValue==''?"--":fundIncsYsList[2].fundIncsYearsValue}}&#37; </div>
+			</div>
+			<div class="row no-gutter fund-table-list">
+				<div class="col-25 col-center"> 近三年 </div>
+				<div class="col-25 col-center" ng-class="{true:'redra',false:'greenra'}[data.fundIncs3y>0]"> {{data.fundIncs3y==''?"--":data.fundIncs3y}}&#37; </div>
+				<div class="col-25 col-center"> {{fundIncsYsList[3].fundIncsYears}} </div>
+				<div class="col-25 col-center" ng-class="{true:'redra',false:'greenra'}[fundIncsYsList[3].fundIncsYearsValue>0]"> {{fundIncsYsList[3].fundIncsYearsValue==''?"--":fundIncsYsList[3].fundIncsYearsValue}}&#37; </div>
+			</div>
+			<div class="row no-gutter fund-table-list">
+				<div class="col-25 col-center"> 近五年 </div>
+				<div class="col-25 col-center" ng-class="{true:'redra',false:'greenra'}[data.fundIncs5y>0]"> {{data.fundIncs5y==''?"--":data.fundIncs5y}}&#37; </div>
+				<div class="col-25 col-center"> {{fundIncsYsList[4].fundIncsYears}} </div>
+				<div class="col-25 col-center" ng-class="{true:'redra',false:'greenra'}[fundIncsYsList[4].fundIncsYearsValue>0]"> {{fundIncsYsList[4].fundIncsYearsValue==''?"--":fundIncsYsList[4].fundIncsYearsValue}}&#37; </div>
+			</div>
+		</div>
+		<!-- 基金公司 -->
+		<div class="list">
+			<a class="item">
+				基金公司
+				<span class="item-note">
+            {{data.fundCompValue}}
+          </span>
+			</a>
+			<a class="item">
+			基金经理
+				<span class="item-note">
+           {{data.fundManagers}}
+          </span>
+			</a>
+			
+			<a class="item item-icon-right" href="#/fiveArea?ISIN={{data.isin}}">
+				五大区域
+				<i class="icon ion-chevron-right iconri-size"></i>
+			</a>
+			<a class="item item-icon-right" href="#/shidazc?ISIN={{data.isin}}">
+				十大重仓
+				<i class="icon ion-chevron-right iconri-size"></i>
+			</a>
+			<a class="item item-icon-right" href="#/lsjz?ISIN={{data.isin}}">
+				历史净值
+				<i class="icon ion-chevron-right iconri-size"></i>
+			</a>
+
+			
+
+		
+		</div>
+
+</ion-view>
+</ion-content>

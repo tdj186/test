@@ -1,0 +1,317 @@
+<ion-view view-title="境外基金" hide-nav-bar="false">
+  <ion-content class="" ng-init="Ctrl.init()">
+      <div class="navbar">
+              <div class="navbar-inner"></div>
+      </div>
+      <div data-page="detail" class="page no-navbar no-toolbar">
+
+              <div class="page-content">
+                      <div class="infinite-scroll-preloader">
+                              <div class="preloader"></div>
+                      </div>
+
+                      <!--<div class="infinite-scroll-preloader">
+                                      <div class="preloader"></div>
+                              </div>-->
+                      <div class="fund-detail" id="detailWrap">
+
+                      </div>
+
+              </div>
+      </div>
+
+              <!-- 基础信息 -->
+              <div class="no-gutter fund-summary">
+                      <h3>{{data.fundNameC}}</h3>
+                      <p> {{data.fundName}} 
+                      <!-- { {#if hideBtn}}
+                              <a href="#" class="button ytj-but"><span>已添加</span></a> {{else}}
+                              <a id="comcache" href="html/fund/fund-compare.html" data-context='{"isin":"{{isin}}","fundNameC":"{{fundNameC}}"}'><span class="com-but">+比</span></a> {{/if}}
+                      -->
+                      </p>
+                      <p id="isin"> ISIN: {{data.isin}}
+                      </p>
+
+              </div>
+              <!-- 其他信息 -->
+              <div class="row no-gutter fund-info">
+                      <div class="col-33 col-center">
+                              {{data.areaValue}}
+                              <br><span>区域类型</span>
+                      </div>
+                      <div class="col-33 col-center">
+                              {{data.investmentValue}}
+                              <br><span>投资类型</span>
+                      </div>
+                      <div class="col-33 col-center">
+                              {{data.rankValue}}
+                              <br><span>晨星评级</span>
+                      </div>
+              </div>
+              <!-- 净值信息 -->
+              <div class="row no-gutter fund-info">
+                      <div class="col-50 col-center">
+                              {{data.fundNet}}
+                              <br><span>单位净值</span>
+                      </div>
+                      <div class="col-50 col-center">
+                              <i class="{{incsClass}}">{{data.fundIncsytd}}&#37;</i>
+                              <br><span>日涨跌幅</span>
+                      </div>
+              </div>
+              <!-- 增长率图表信息 -->
+              <div class="no-gutter fund-charts">
+                      <div class="buttons-row" style="width: 90%;margin: auto;">
+                              <a class="button tab-link active" href="#tab1">月</a>
+                              <a class="button tab-link" href="#tab2"> 季 </a>
+                              <a class="button tab-link" href="#tab3"> 半年 </a>
+                              <a class="button tab-link" href="#tab4"> 年 </a>
+                              <a class="button tab-link" href="#tab5"> 试算 </a>
+                      </div>
+                      <div class="tabs">
+                              <div id="tab1" class="tab active">
+                                      <div class="content-block">
+                                              <div class="no-data-display">暂无数据</div>
+                                              <div id="line_chart_1" class="chart-zhe"></div>
+                                      </div>
+                              </div>
+                              <div id="tab2" class="tab">
+                                      <div class="content-block">
+                                              <div class="no-data-display">暂无数据</div>
+                                              <div id="line_chart_2" class="chart-zhe"></div>
+                                      </div>
+                              </div>
+                              <div id="tab3" class="tab">
+                                      <div class="content-block">
+                                              <div class="no-data-display">暂无数据</div>
+                                              <div id="line_chart_3" class="chart-zhe"></div>
+                                      </div>
+                              </div>
+                              <div id="tab4" class="tab">
+                                      <div class="content-block">
+                                              <div class="no-data-display">暂无数据</div>
+                                              <div id="line_chart_4" class="chart-zhe"></div>
+                                      </div>
+                              </div>
+                              <div id="tab5" class="tab">
+                                      <div class="content-block">
+                                              <div class="no-data-display">该时间段暂无数据，请手动选择其他时间段</div>
+                                              <div id="line_chart_5" class="chart-zhe"></div>
+                                              <div class="list-block pingg4sj" style="margin-bottom: 0px;">
+                                                      <ul>
+                                                              <li>
+                                                                      <div class="item-content">
+                                                                              <div class="item-inner">
+                                                                                      <div class="item-input">
+                                                                                              <input style="width: 80%;float: left;font-size: 14px;" type="text" placeholder="点击该区域选择初始时间和结束时间" readonly="readonly" id="calendar-range">
+                                                                                              <span style="width: 50px;float: right;margin-top: 6px;" class="button disabled active" id="datasyDetail">确定</span>
+                                                                                      </div>
+                                                                              </div>
+                                                                      </div>
+                                                              </li>
+                                                      </ul>
+                                              </div>
+                                      </div>
+                              </div>
+                      </div>
+
+              </div>
+              <!-- 基金业绩 -->
+              <div class="row no-gutter fund-info">
+                      <div class="col-50 col-center"> 过往收益 </div>
+                      <div class="col-50 col-center"> 年度收益 </div>
+              </div>
+              <div class="no-gutter fund-table">
+                      <div class="row no-gutter fund-table-header">
+                              <div class="col-25 col-center"> 期限 </div>
+                              <div class="col-25 col-center"> 回报 </div>
+                              <div class="col-25 col-center"> 年份 </div>
+                              <div class="col-25 col-center"> 回报 </div>
+                      </div>
+                      <div class="row no-gutter fund-table-list">
+                              <div class="col-25 col-center"> 近一个月 </div>
+                              <div class="col-25 col-center {{data.incrclassfundIncsm}}"> {{data.fundIncsm}}&#37; </div>
+                              <div class="col-25 col-center"> {{data.fundIncsYears1}}</div>
+                              <div class="col-25 col-center {{data.insclassYearsValue1}}"> {{data.fundIncsYearsValue1}}&#37; </div>
+                      </div>
+                      <div class="row no-gutter fund-table-list">
+                              <div class="col-25 col-center"> 今年以来 </div>
+                              <div class="col-25 col-center {{data.incrclassfundIncsthisy}}"> {{data.fundIncsthisy}}&#37; </div>
+                              <div class="col-25 col-center"> {{data.fundIncsYears2}} </div>
+                              <div class="col-25 col-center {{data.insclassYearsValue2}}"> {{data.fundIncsYearsValue2}}&#37; </div>
+                      </div>
+                      <div class="row no-gutter fund-table-list">
+                              <div class="col-25 col-center"> 近一年 </div>
+                              <div class="col-25 col-center {{data.incrclassfundIncsy}}"> {{data.fundIncsy}}&#37; </div>
+                              <div class="col-25 col-center"> {{data.fundIncsYears3}} </div>
+                              <div class="col-25 col-center {{data.insclassYearsValue3}}"> {{data.fundIncsYearsValue3}}&#37; </div>
+                      </div>
+                      <div class="row no-gutter fund-table-list">
+                              <div class="col-25 col-center"> 近三年 </div>
+                              <div class="col-25 col-center {{data.incrclassfundIncs3y}}"> {{data.fundIncs3y}}&#37; </div>
+                              <div class="col-25 col-center"> {{data.fundIncsYears4}} </div>
+                              <div class="col-25 col-center {{data.insclassYearsValue4}}"> {{data.fundIncsYearsValue4}}&#37; </div>
+                      </div>
+                      <div class="row no-gutter fund-table-list">
+                              <div class="col-25 col-center"> 近五年 </div>
+                              <div class="col-25 col-center {{data.incrclassfundIncs5y}}"> {{data.fundIncs5y}}&#37; </div>
+                              <div class="col-25 col-center"> {{data.fundIncsYears5}} </div>
+                              <div class="col-25 col-center {{data.insclassYearsValue5}}"> {{data.fundIncsYearsValue5}}&#37; </div>
+                      </div>
+              </div>
+              <!-- 基金公司 -->
+              <div class="list-block listitem">
+                      <ul>
+                              <li class="item-content">
+                                      <div class="item-inner">
+                                              <div class="item-title">基金公司</div>
+                                              <div class="item-after">{{data.fundCompValue}}</div>
+                                      </div>
+                              </li>
+                              <li class="item-content">
+                                      <div class="item-inner">
+                                              <div class="item-title">基金经理</div>
+                                              <div class="item-after">{{data.fundManagers}}</div>
+                                      </div>
+                              </li>
+                              <li>
+                                      <a href="#" id="area-link" class="item-link arealink">
+                                              <div class="item-content">
+                                                      <div class="item-inner">
+                                                              <div class="item-title">五大区域</div>
+                                                      </div>
+                                              </div>
+                                      </a>
+                              </li>
+                              <li>
+                                      <a href="#" id="fundStock-link" data-isin="{{data.isin}}" class="item-link item-content fundStocklink">
+                                              <div class="item-inner">
+                                                      <div class="item-title">十大重仓</div>
+                                              </div>
+                                      </a>
+                              </li>
+                              <li>
+                                      <a href="#" id="fundnav-link" data-isin="{{data.isin}}" class="item-link item-content fundnevlink">
+                                              <div class="item-inner">
+                                                      <div class="item-title">历史净值</div>
+                                              </div>
+                                      </a>
+                              </li>
+                      </ul>
+              </div>
+
+      <!-- 五大区域列表 -->
+      <script id="areaChartsTemplate" type="text/template7">
+              <div class="navbar">
+                      <div class="navbar-inner" style="background: #1761C4">
+                              <div class="left"><a href="fund-details.html" class="back link"><i class="fa fa-angle-left"></i> <span style="color: #fff">返回详情</span> </a></div>
+                              <div class="center">五大区域</div>
+                      </div>
+              </div>
+              <div class="pages navbar-through">
+                      <div data-page="areaCharts" class="page no-toolbar">
+
+                              <div class="page-content">
+                                      <div class="infinite-scroll-preloader">
+                                              <div class="preloader"></div>
+                                      </div>
+                                      <div class="col-90 col-center">
+                                              <!-- 图表信息 -->
+                                              <div class="no-data-display">暂无数据</div>
+                                              <div class="col-45">
+                                                      <div id="area-chart" class="chart-huan"></div>
+                                              </div>
+                                              <!-- 列表 -->
+                                              <div class="list-block" id="fundnav-list-block">
+                                                      <ul>
+                                                              <li>
+                                                                      <div class="item-inner">
+                                                                              <div class="item-title">　　区域名称</div>
+                                                                              <div class="item-after">区域占比</div>
+                                                                      </div>
+                                                              </li>
+                                                              <li ng-repeat="al in data.areaList">
+                                                                      <div class="item-inner">
+                                                                              <div class="item-title">　<i class="fa fa-square" style="color: #{{al.color}}"></i> {{al.areaName}} </div>
+                                                                              <div class="item-after"> {{al.areaValue}}{{al.areaValue}}&#37; </div>
+                                                                      </div>
+                                                              </li>
+                                                      </ul>
+                                              </div>
+                                      </div>
+                              </div>
+                      </div>
+              </div>
+      </script>
+
+      <!-- 十大重仓列表 -->
+      <script id="stockChartsTemplate" type="text/template">
+              <div class="navbar">
+                      <div class="navbar-inner" style="background: #1761C4">
+                              <div class="left"><a href="#" class="back link"><i class="fa fa-angle-left"></i> <span style="color: #fff">返回详情</span> </a></div>
+                              <div class="center">十大重仓</div>
+                      </div>
+              </div>
+              <div class="pages navbar-through">
+                      <div data-page="stockCharts" class="page no-toolbar">
+                              <div class="page-content">
+                                      <div class="infinite-scroll-preloader">
+                                              <div class="preloader"></div>
+                                      </div>
+                                      <div class="col-90 col-center">
+                                              <!-- 图表信息 -->
+                                              <div class="no-data-display">暂无数据</div>
+                                              <div class="col-45">
+                                                      <div id="stock-chart" class="chart-huan"></div>
+                                              </div>
+                                              <!-- 列表 -->
+                                              <div class="list-block" id="stock-list-block">
+                                                      <ul>
+                                                              <li>
+                                                                      <div class="item-inner">
+                                                                              <div class="item-title">　　持仓名称</div>
+                                                                              <div class="item-after">持仓占比</div>
+                                                                      </div>
+                                                              </li>
+                                                              <li ng-repeat="fs in data.fundStockList">
+                                                                      <div class="item-inner">
+                                                                              <div class="item-title">　<i class="fa fa-square" style="color: #{{fs.color}}"></i> {{fs.fundStockName}} </div>
+                                                                              <div class="item-after"> {{fs.fundStockValue}}{{fs.fundStockValue}}&#37; </div>
+                                                                      </div>
+                                                              </li>
+                                                      </ul>
+                                              </div>
+                                      </div>
+                              </div>
+                      </div>
+              </div>
+      </script>
+
+      <!-- 历史净值列表 -->
+      <script id="fundnavsTemplate" type="text/template">
+              <div class="navbar">
+                      <div class="navbar-inner" style="background: #1761C4">
+                              <div class="left sliding"><a href="#" class="back link"><i class="fa fa-angle-left"></i> <span style="color: #fff">返回详情</span> </a></div>
+                              <div class="center sliding">历史净值</div>
+                      </div>
+              </div>
+              <div class="pages navbar-through">
+                      <div data-page="fundnavsList" class="page infinite-scroll no-toolbar">
+
+                              <div class="page-content infinite-scroll" style="padding-top: 56px;">
+                                      <div class="list-block" id="fundnav-list-block">
+
+                                              <ul id="fundnav-list-result">
+
+                                              </ul>
+                                      </div>
+                                      <div class="infinite-scroll-preloader">
+                                              <div class="preloader"></div>
+                                      </div>
+                              </div>
+                      </div>
+              </div>
+      </script>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,185 @@
+<ion-header-bar align-title="center" class="fundfilter-title">
+
+	<div class="button button-icon ion-search icon-mysize" ng-click="openSearch()">
+	</div>
+
+	<h1 class="title">境外基金</h1>
+
+	<div class="button button-icon ion-funnel icon-mysize" ng-click="opensx()"></div>
+
+</ion-header-bar>
+
+<ion-view hide-nav-bar="true">
+	<ion-content class="" ng-init="Ctrl.init()">
+
+		<!-- Top Navbar-->
+
+		<div>
+			<!--首页基金列表-->
+			<div id="fund-list-block">
+				<!--筛选搜索条件-->
+				<div id="condition1" class="col-90 dd"></div>
+				<div style="">
+					<div class="row table-header">
+						<div class="col col-25"> 最新净值 </div>
+						<div class="col col-50"> 最新日期 </div>
+						<div class="col col-25" ng-click="dataPopover.show($event)"> 近一个月&nbsp;<i class="ion-ios-arrow-down"></i> </div>
+					</div>
+				</div>
+				<!--<a href="html/fund-details.html">hhrhhhh</a>-->
+				<!--结果列表 -->
+				<div id="fund-list-result" class="no-gutter rankfilter" style="">
+					<a ng-repeat="f in fundsList track by $index" href="#/fund/fund-details?ISIN={{f.isin | encodeURI}}" class="item-link item-content">
+
+						<div class="table-list">
+							<div class="table-fundname fundl">
+								<div class="{{bj}}">
+								</div>
+								<span style="">{{f.fundNameC}}</span>
+							</div>
+							<div class="row fund2" style="">
+								<div class="col col-25 table-funddate">{{f.fundNet}} {{f.currencyValue}} </div>
+								<div class="col col-50 table-funddate"> {{f.fundNetDate}} </div>
+								<div class="col col-25 table-rata"> <i class="{{f.incsClass}}">{{f.fundIncsRate}}&#37;</i> </div>
+							</div>
+
+						</div>
+					</a>
+				</div>
+				<ion-infinite-scroll ng-if="state" on-infinite="loadMore()" distance="1%">
+				</ion-infinite-scroll>
+
+			</div>
+		</div>
+		<script id="sousouModal.html" type="text/ng-template">
+			<ion-modal-view style="width: 100%;">
+				<ion-header-bar class="fundfilter-title">
+					<div class="item item-input" style="padding: 2px 0 1px 16px;width:100%;border-radius: 5px;
+			height: 28px;margin: 3px 0px;border-width: 0px;">
+						<i class="icon ion-search placeholder-icon" style="color:#aaa;"></i>
+						<input type="search" placeholder="请输入基金代码或简称" ng-model="formParam.keyword" style="height: 23px;">
+						<div class="button button-positive button-small" ng-click="search()">确定</div>
+					</div>
+
+				</ion-header-bar>
+				<ion-content>
+					<div id="searchbar" class="searchk">
+						<div>
+							<div class="searchtop">热门搜索</div>
+							<div class="searchli searchCriteria" ng-click="search('美国高收益债')">美国高收益债</div>
+							<div class="searchli searchCriteria" ng-click="search('富兰克林')">富兰克林</div>
+						</div>
+						<div class="back-list" style="width: 50%;margin: auto;margin-top: 50px;">
+							<div class="button button-positive button-small btn-more" ng-click="backflist()">返回列表</div>
+						</div>
+
+					</div>
+				</ion-content>
+			</ion-modal-view>
+		</script>
+		<script id="modal.html" type="text/ng-template">
+			<ion-modal-view style="width:270px;" class="leftModal">
+				<ion-header-bar style="border-bottom:0px;">
+
+					<div class="buttons btn-bck" ng-if="backvalue" ng-click="backCon()">
+						<i class="ion-chevron-left"></i><span>返回</span>
+					</div>
+					<h1 class="title" style="color: #1761c5;">{{conTitle}}</h1>
+					<div class="buttons" id="closeMenu">
+
+						<div class="right clobtn" ng-click="modal.hide()">关闭</div>
+
+					</div>
+				</ion-header-bar>
+				<ion-content>
+					<ion-list class="sxlist">
+						<ion-item ng-click="showCondition(1)">
+							区域类型
+							<span class="rflo">
+						<span class="rflo1">{{formParam.area}}</span>
+							<i class="ion-chevron-right"></i></span>
+						</ion-item>
+						<ion-item ng-click="showCondition(2)">
+							投资类型
+							<span class="rflo">
+						<span class="rflo1">{{formParam.investment}}</span>
+							<i class="ion-chevron-right"></i></span>
+						</ion-item>
+						<ion-item ng-click="showCondition(3)">
+							基金公司
+							<span class="rflo">
+						<span class="rflo1">{{formParam.company}}</span>
+							<i class="ion-chevron-right"></i></span>
+						</ion-item>
+						<ion-item ng-click="showCondition(4)">
+							基金货币
+							<span class="rflo">
+						<span class="rflo1">{{formParam.currency}}</span>
+							<i class="ion-chevron-right"></i></span>
+						</ion-item>
+						<ion-item ng-click="showCondition(5)">
+							晨星评级
+							<span class="rflo">
+						<span class="rflo1">{{formParam.rank}}</span>
+							<i class="ion-chevron-right"></i></span>
+						</ion-item>
+						<div style="text-align: center;">
+							<button class="button button-small button-positive btn-sx" ng-click="subSxtj()">确认筛选</button>
+						</div>
+
+					</ion-list>
+					<form name="sxtj" style="padding-top: 40px;">
+
+						<div id="list01" ng-show="con.Value1">
+							<ion-list>
+								<ion-radio type="radio" name="careaArea" ng-repeat="carea in careas" ng-value="carea.areaID" ng-model="formParam.area"><span>{{carea.areaValue}}</span></ion-radio>
+							</ion-list>
+
+						</div>
+						<div id="list02" ng-show="con.Value2">
+							<ion-list>
+								<ion-radio name="cinvestmentInvestment" ng-repeat="cinvestment in cinvestments" ng-value="cinvestment.investmentID" ng-model="formParam.investment">{{cinvestment.investmentValue}}</ion-radio>
+							</ion-list>
+						</div>
+						<div id="list03" ng-if="con.Value3">
+							<ion-list>
+								<ion-radio name="cfundCompCom" ng-repeat="cfundComp in cfundComps" ng-value="cfundComp.compID" ng-model="formParam.company">{{cfundComp.compValue}}</ion-radio>
+							</ion-list>
+						</div>
+						<div id="list04" ng-if="con.Value4">
+							<ion-list>
+								<ion-radio name="currency" ng-repeat="ccurrencie in ccurrencies" ng-value="ccurrencie.currencyID" ng-model="formParam.currency">{{ccurrencie.currencyValue}}</ion-radio>
+							</ion-list>
+						</div>
+						<div id="list05" ng-if="con.Value5">
+							<ion-list>
+								<ion-radio name="crank" ng-value="0" ng-model="formParam.rank">全部</ion-radio>
+								<ion-radio name="crank" ng-value="1" ng-model="formParam.rank">★</ion-radio>
+								<ion-radio name="crank" ng-value="2" ng-model="formParam.rank">★★</ion-radio>
+								<ion-radio name="crank" ng-value="3" ng-model="formParam.rank">★★★</ion-radio>
+								<ion-radio name="crank" ng-value="4" ng-model="formParam.rank">★★★★</ion-radio>
+								<ion-radio name="crank" ng-value="5" ng-model="formParam.rank">★★★★★</ion-radio>
+							</ion-list>
+						</div>
+					</form>
+				</ion-content>
+
+			</ion-modal-view>
+		</script>
+		<!--浮动排序日期筛选-->
+		 <script id="data-popover.html" type="text/ng-template">
+				<ion-popover-view style="width:100%;" class="datapover">
+					<ion-content>
+						<ion-list>
+								<ion-radio  ng-change="dataChage()" style="height:45px;line-height:20px;" name="dateName" ng-repeat="dateItem in dateArray" ng-value="dateItem.dataCode" ng-model="formParam.sort">{{dateItem.dataText}}</ion-radio>
+						</ion-list>
+						
+					</ion-content>
+				</ion-popover-view>
+			</script>
+
+		<!--<ion-infinite-scroll ng-if="state" on-infinite="loadMore()" distance="1%">
+		</ion-infinite-scroll>-->
+
+	</ion-content>
+</ion-view>

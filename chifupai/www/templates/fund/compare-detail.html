@@ -1,0 +1,181 @@
+<ion-view view-title="境外基金" hide-nav-bar="false">
+	<ion-content class=""  ng-init="Ctrl.init()">
+
+		<div class="">
+			<div class="row com-name">
+				<div style="color: white;margin: auto;">基金名称</div>
+				<div class="col col-37 com-name1">
+					<span style="font-size: small;vertical-align: -webkit-baseline-middle;">{{comtwoLi[0].fundNameC}}</span>
+				</div>
+				<div class="col col-37 com-name1">
+					<span style="font-size: small;vertical-align: -webkit-baseline-middle;">{{comtwoLi[1].fundNameC}}</span>
+				</div>
+			</div>
+		</div>
+		<!--基金业绩-->
+		<div class="">
+			<div class="com-title">基金业绩</div>
+			
+			<div class="wrap-list">
+				<div class="row list-row">
+					<div class="col col-26">近一月</div>
+					<div class="col col-37 ">{{fundIncs1.fundIncsm}}&#37;</div>
+					<div class="col col-37 ">{{fundIncs2.fundIncsm}}&#37;</div>
+				</div>
+				<div class="row list-row">
+					<div class="col col-26">近三月</div>
+					<div class="col col-37 ">{{fundIncs1.fundIncs3m}}&#37;</div>
+					<div class="col col-37 ">{{fundIncs2.fundIncs3m}}&#37;</div>
+				</div>
+				<div class="row list-row">
+					<div class="col col-26">近六月</div>
+					<div class="col col-37 ">{{fundIncs1.fundIncs6m}}&#37;</div>
+					<div class="col col-37 ">{{fundIncs2.fundIncs6m}}&#37;</div>
+				</div>
+				<div class="row list-row">
+					<div class="col col-26">近一年</div>
+					<div class="col col-37 ">{{fundIncs1.fundIncsy}}&#37;</div>
+					<div class="col col-37 ">{{fundIncs2.fundIncsy}}&#37;</div>
+				</div>
+				<div class="row list-row">
+					<div class="col col-26">近三年</div>
+					<div class="col col-37 ">{{fundIncs1.fundIncs3y}}&#37;</div>
+					<div class="col col-37 ">{{fundIncs2.fundIncs3y}}&#37;</div>
+				</div>
+				<div class="row list-row">
+					<div class="col col-26">近五年</div>
+					<div class="col col-37">{{fundIncs1.fundIncs5y}}&#37;</div>
+					<div class="col col-37">{{fundIncs2.fundIncs5y}}&#37;</div>
+				</div>
+			</div>
+		</div>
+		<!--年度收益-->
+		<div class="">
+			<div class="com-title">年度收益</div>
+			<div class="wrap-list">
+				<div class="row list-row">
+					<div class="col col-26">{{fundIncsYearsList1[0].fundIncsYears}}年</div>
+					<div class="col col-37">{{fundIncsYearsList1[0].fundIncsYearsValue}}&#37;</div>
+					<div class="col col-37">{{fundIncsYearsList2[0].fundIncsYearsValue}}&#37;</div>
+				</div>
+				<div class="row list-row">
+					<div class="col col-26">{{fundIncsYearsList1[1].fundIncsYears}}年</div>
+					<div class="col col-37 ">{{fundIncsYearsList1[1].fundIncsYearsValue}}&#37;</div>
+					<div class="col col-37 ">{{fundIncsYearsList2[1].fundIncsYearsValue}}&#37;</div>
+				</div>
+				<div class="row list-row">
+					<div class="col col-26">{{fundIncsYearsList1[2].fundIncsYears}}年</div>
+					<div class="col col-37 ">{{fundIncsYearsList1[2].fundIncsYearsValue}}&#37;</div>
+					<div class="col col-37 ">{{fundIncsYearsList2[2].fundIncsYearsValue}}&#37;</div>
+				</div>
+				<div class="row list-row">
+					<div class="col col-26">{{fundIncsYearsList1[3].fundIncsYears}}年</div>
+					<div class="col col-37 ">{{fundIncsYearsList1[3].fundIncsYearsValue}}&#37;</div>
+					<div class="col col-37 ">{{fundIncsYearsList2[3].fundIncsYearsValue}}&#37;</div>
+				</div>
+				<div class="row list-row">
+					<div class="col col-26">{{fundIncsYearsList1[4].fundIncsYears}}年</div>
+					<div class="col col-37 ">{{fundIncsYearsList1[4].fundIncsYearsValue}}&#37;</div>
+					<div class="col col-37 ">{{fundIncsYearsList2[4].fundIncsYearsValue}}&#37;</div>
+				</div>
+			</div>
+		</div>
+
+		<!--星辰评级-->
+		<div class="">
+			<div class="com-title">星辰评级</div>
+			<div class="wrap-list">
+				<div class="row list-row">
+					<div class="col col-26">综合评级</div>
+					<div class="col col-37">{{rankList1.rankNow}}</div>
+					<div class="col col-37">{{rankList2.rankNow}}</div>
+				</div>
+				<div class="row list-row">
+					<div class="col col-26">三年评级</div>
+					<div class="col col-37">{{rankList1.rank3y}}</div>
+					<div class="col col-37">{{rankList2.rank3y}}</div>
+				</div>
+				<div class="row list-row">
+					<div class="col col-26">五年评级</div>
+					<div class="col col-37">{{rankList1.rank5y}}</div>
+					<div class="col col-37">{{rankList2.rank5y}}</div>
+				</div>
+				<div class="row list-row">
+					<div class="col col-26">十年评级</div>
+					<div class="col col-37">{{rankList1.rank10y}}</div>
+					<div class="col col-37">{{rankList2.rank10y}}</div>
+				</div>
+			</div>
+		</div>
+
+		<!--基金概况-->
+		<div class="">
+			<div class="com-title">基金概况</div>
+			<div class="wrap-list">
+				<div class="row list-row" style="height: auto;">
+					<div class="col col-26">基金公司</div>
+					<div class="col col-37" style="line-height:25px;">{{comtwoLi[0].fundCompValue}}</div>
+					<div class="col col-37" style="line-height:25px;">{{comtwoLi[1].fundCompValue}}</div>
+				</div>
+				<div class="row list-row">
+					<div class="col col-26">区域类型</div>
+					<div class="col col-37">{{comtwoLi[0].areaValue}}</div>
+					<div class="col col-37">{{comtwoLi[1].areaValue}}</div>
+				</div>
+				<div class="row list-row">
+					<div class="col col-26">资产类型</div>
+					<div class="col col-37">{{comtwoLi[0].investmentValue}}</div>
+					<div class="col col-37">{{comtwoLi[1].investmentValue}}</div>
+				</div>
+				<div class="row list-row" style="height: auto;">
+					<div class="col col-26">主题类型</div>
+					<div class="col col-37" style="line-height:25px;">{{comtwoLi[0].styleType}}</div>
+					<div class="col col-37" style="line-height:25px;">{{comtwoLi[1].styleType}}</div>
+				</div>
+				<div class="row list-row">
+					<div class="col col-26">货币类型</div>
+					<div class="col col-37">{{comtwoLi[0].currencyValue}}</div>
+					<div class="col col-37">{{comtwoLi[1].currencyValue}}</div>
+				</div>
+				<div class="row list-row">
+					<div class="col col-26">成立时间</div>
+					<div class="col col-37">{{comtwoLi[0].foundingDate}}</div>
+					<div class="col col-37">{{comtwoLi[1].foundingDate}}</div>
+				</div>
+				<div class="row list-row">
+					<div class="col col-26">基金规模</div>
+					<div class="col col-37">{{comtwoLi[0].fundSize}}</div>
+					<div class="col col-37">{{comtwoLi[1].fundSize}}</div>
+				</div>
+			</div>
+		</div>
+
+		<!--资产配置-->
+		<div class="">
+			<div class="com-title">资产配置</div>
+			<div class="wrap-list">
+				<div class="row list-row">
+					<div class="col col-26">股票多仓</div>
+					<div class="col col-37">{{assetList1.assetStock}}&#37;</div>
+					<div class="col col-37">{{assetList2.assetStock}}&#37;</div>
+				</div>
+				<div class="row list-row">
+					<div class="col col-26">债券多仓</div>
+					<div class="col col-37">{{assetList1.assetBond}}&#37;</div>
+					<div class="col col-37">{{assetList2.assetBond}}&#37;</div>
+				</div>
+				<div class="row list-row">
+					<div class="col col-26">现金多仓</div>
+					<div class="col col-37">{{assetList1.assetCash}}&#37;</div>
+					<div class="col col-37">{{assetList2.assetCash}}&#37;</div>
+				</div>
+				<div class="row list-row">
+					<div class="col col-26">其他多仓</div>
+					<div class="col col-37">{{assetList1.assetOther}}&#37;</div>
+					<div class="col col-37">{{assetList2.assetOther}}&#37;</div>
+				</div>
+			</div>
+		</div>
+
+	</ion-content>
+</ion-view>

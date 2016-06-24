@@ -1,0 +1,23 @@
+<ion-header-bar align-title="center" class="bar-positive">
+<button ng-click="" class="button button-icon"><i class="icon ion-chevron-left" style="width: 10px !important;"></i>返回详情</button>
+	
+
+	<h1 class="title">历史净值</h1>
+
+
+
+</ion-header-bar>
+<ion-view view-title="" hide-nav-bar="true">
+	<ion-content class="" style="" ng-init="Ctrl.init()">
+		<!-- YOUR CODE HERE -->
+		<div class="list">
+			<a class="item"><span>日期</span>
+				<span style="float: right;">
+          	  单位净值</a>
+			<a class="item" ng-repeat="item in fundNetsItems">
+				<span>{{item.fundNetDate}}</span>
+				<span style="float: right;">
+          	  {{item.fundNetValue}}</a>
+		</div>
+	</ion-content>
+</ion-view>

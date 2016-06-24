@@ -1,0 +1,937 @@
+@charset "utf-8";
+body {
+	background: #F0EFF5;
+	overflow-y: hidden;
+}
+
+.page {
+	background: #F0EFF5;
+}
+
+.view-main .navbar {
+	background-color: #F0EFF5;
+}
+
+.view-main .navbar:after {
+	background-color: #F0EFF5;
+}
+
+i.icon.icon-back {}
+
+.col-left {
+	text-align: left !important;
+	margin-left: 30px
+}
+
+.col-right {
+	text-align: right !important
+}
+
+.col-center {
+	text-align: center !important
+}
+
+.valueup {
+	font-style: normal !important;
+	color: #E80B2A
+}
+
+.valuedown {
+	font-style: normal !important;
+	color: #2C8710
+}
+
+.navbar {
+	color: #fff;
+	background: #1761c4
+}
+
+.navbar .fa {
+	color: #fff
+}
+
+
+/*.navbar a.link i + span, .toolbar a.link i + span, .navbar a.link i + i, .toolbar a.link i + i, .navbar a.link span + i, .toolbar a.link span + i, .navbar a.link span + span, .toolbar a.link span + span {
+	color: #fff;
+	font-size: 16px
+}*/
+
+.logo img {
+	height: 26px;
+	margin-left: 10px
+}
+
+.table-header {
+	font-size: 12px;
+	color: #505050;
+	height: 34px;
+	line-height: 34px;
+	/*	margin-top: 10px;*/
+	/*	width: 90%;*/
+	padding-left: 5%;
+	padding-right: 5%;
+	margin: auto;
+	background: #fff
+}
+
+.table-list {
+	font-size: 12px;
+	height: 60px;
+	border-bottom: 7px solid #F0EFF5;
+	background: #fff
+}
+
+.table-list a {
+	color: #505050 !important
+}
+
+.table-fundname,
+.table-fundrate {
+	color: #505050;
+	/*line-height: 50px*/
+}
+
+.table-fundname {
+	height: 35px;
+	line-height: 35px;
+}
+
+.table-fundvalue {
+	color: #000;
+	padding-top: 12px;
+	position: relative
+}
+
+.table-funddate {
+	font-size: 9px;
+	color: #959595;
+	/*position: absolute;
+	right: 0;
+	top: 26px*/
+}
+
+.fund-summary {
+	color: #545454;
+	background: #fff;
+	padding: 10px
+}
+
+.fund-summary h3 {
+	font-size: 16px;
+	margin: 5px 0
+}
+
+.fund-summary p {
+	color: #a8a8a8;
+	font-size: 12px;
+	margin: 5px 0;
+}
+
+.fund-info {
+	background: #fff;
+	font-size: 16px;
+	padding: 20px 0;
+	margin-top: 10px;
+	text-align: center
+}
+
+.fund-info span {
+	color: #a8a8a8;
+	font-size: 12px;
+}
+
+.fund-info > div {
+	border-right: 1px solid #dbdbdb;
+}
+
+.fund-info > div:last-child {
+	border-right: 0
+}
+
+.fund-charts {
+	background: #fff;
+	font-size: 16px;
+	padding: 0 10px;
+	text-align: center
+}
+
+.links-row {
+	padding: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	border: 1px solid #f0f0f0;
+	border-radius: 5px;
+	-ms-flex-item-align: center;
+	-webkit-align-self: center;
+	align-self: center;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-lines: single;
+	-moz-box-lines: single;
+	-webkit-flex-wrap: nowrap;
+	-ms-flex-wrap: none;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap
+}
+
+.links-row > a.tab-link {
+	display: block;
+	color: #444;
+	width: 100%;
+	-webkit-box-flex: 1;
+	-ms-flex: 1
+}
+
+.links-row > a.tab-link.active {
+	color: #3c90e6;
+}
+
+.fund-charts canvas {
+	height: 200px;
+	width: 96% !important;
+	margin-left: auto;
+	margin-right: auto
+}
+
+.fund-charts .content-block {
+	margin: 15px 0;
+}
+
+.fund-table {
+	background: #fff;
+	font-size: 14px;
+	line-height: 27px;
+	padding: 0;
+	text-align: center !important
+}
+
+.fund-table-header {
+	color: #838383
+}
+
+.fund-table-list {
+	border-top: 1px solid #ebebeb;
+	padding-top: 3px
+}
+
+.listitem {
+	font-size: 14px;
+	margin-bottom: 0;
+	margin-top: 10px
+}
+
+#fundnav-list-result {
+	padding-left: 10px;
+	padding-right: 10px
+}
+
+#fundnav-list-result li {
+	border-bottom: 1px solid #d5d1d0
+}
+
+#fundnav-list-result .item-title,
+#fundnav-list-result .item-after {
+	font-size: 12px;
+	color: #505050
+}
+
+.infinite-scroll-preloader {
+	margin-top: 50px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.infinite-scroll-preloader .preloader {
+	width: 34px;
+	height: 34px;
+}
+
+#area-chart,
+#stock-chart {
+	padding-top: 15px;
+	padding-bottom: 15px
+}
+
+#fundnav-list-block,
+#stock-list-block {
+	margin: 0;
+	padding: 0
+}
+
+#fundnav-list-block > li,
+#stock-list-block > li {
+	border-top: 1px dashed #d5d1d0
+}
+
+#fundnav-list-block .item-title,
+#fundnav-list-block .item-after,
+#stock-list-block .item-title,
+#stock-list-block .item-after {
+	font-size: 12px;
+	color: #505050
+}
+
+.no-data-display {
+	display: none;
+	color: red;
+}
+
+.shaixuan-form-class {
+	/*display: none;*/
+}
+
+
+/* ������ */
+
+.popover-fastsearchForm {
+	width: 96%
+}
+
+.searchk {
+	display: none;
+	/*	margin-top: 20px;*/
+}
+
+.searchbar {
+	padding: 15px 30px;
+	height: 59px;
+	background-image: url(../img/top-ques.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.searchbar input[type=search] {
+	-moz-background-size: 13px 13px;
+	-webkit-background-size: 13px 13px;
+	-o-background-size: 13px 13px;
+	background-size: 13px 13px;
+}
+
+.searchbar .searchbar-ok {
+	-webkit-transition-duration: 300ms;
+	transition-duration: 300ms;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	font-size: 12px;
+	cursor: pointer;
+	opacity: 0;
+	margin: 0;
+	pointer-events: none;
+	position: absolute;
+	right: 30px;
+	top: 15px;
+	line-height: 27px;
+	height: 29px
+}
+
+.searchbar.searchbar-active {
+	/*padding-right: 64px*/
+}
+
+.searchbar.searchbar-active .searchbar-ok {
+	margin-left: 8px;
+	opacity: 1;
+	pointer-events: auto
+}
+
+
+/* ��������� */
+
+
+/*后续样式sy*/
+
+.chart-zhe {
+	height: 200px;
+	width: 96% !important;
+	margin-left: auto;
+	margin-right: auto
+}
+
+.chart-zheyj {
+	height: 140px;
+	width: 96% !important;
+	margin-left: auto;
+	margin-right: auto
+}
+
+.chart-huan {
+	height: 250px;
+	/*width: 230px !important;*/
+}
+
+.firstSpan {
+	text-align: center;
+	font-size: 14px;
+}
+
+.neiyeSpan {
+	display: block;
+}
+
+
+/*.button.active {
+    background: #D5D1D0;
+    color: #007aff;
+    border-radius: 17px;
+}
+.button{
+	color: #777777;
+	border: none;
+	
+}
+.button:last-child{
+	 border-radius: 17px !important;	
+}
+.button:first-child{
+	 border-radius: 17px !important;	
+	 border-left-width: 0px !important;
+}*/
+
+.t-font {
+	font-weight: bold;
+}
+
+.ins-tnav {
+	margin-top: 7px;
+	padding-bottom: 7px;
+}
+
+.com-but {
+	height: 30px;
+	line-height: 30px;
+	width: 30px;
+	background-color: #FFCC00;
+	float: right;
+	color: #FFFFFF;
+	border-radius: 5px;
+	text-align: center;
+	font-weight: 600;
+}
+
+.com-list {
+	height: 45px;
+	text-align: center;
+	line-height: 45px;
+}
+
+.com-title {
+	height: 30px;
+	line-height: 30px;
+	margin-left: 15px;
+}
+
+.ytj-but {
+	width: 70px;
+	float: right;
+	background-color: #939398;
+	border: none;
+	color: #FFFFFF;
+	font-weight: 600;
+}
+
+.sstext {
+	padding: 10px 5% 3px 5%;
+	font-size: 12px;
+	color: #1662C2;
+	/*	background-color: #d5d1d0;
+	height: 27px;
+	line-height: 27px;
+	font-weight: 600;*/
+}
+
+.bjClass {
+	/*	display: inline;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 15px 15px 0 0;
+	border-color: #007bff transparent transparent transparent;*/
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 15px 15px 0 0;
+	border-color: #3673cf transparent transparent transparent;
+	line-height: 0px;
+	_border-color: #3673cf #000000 #000000 #000000;
+	_filter: progid: DXImageTransform.Microsoft.Chroma(color='#000000');
+}
+
+.table-rata {
+	font-size: 14px;
+	margin-top: -5px
+}
+
+.fundl {
+	/*height: 40px;
+	line-height: 40px;*/
+	overflow: hidden
+}
+
+.quest-sub {
+	width: 40%;
+	float: right;
+	margin: 30px;
+}
+
+.si-bwith {
+	width: 50px;
+	margin-left: 20px;
+}
+
+.xrea {
+	height: 40px;
+	line-height: 40px;
+	overflow-x: scroll;
+	width: 95%;
+	white-space: nowrap;
+	margin: auto;
+}
+
+.insispan {
+	margin-left: 30px;
+}
+
+.insidiv {
+	width: 17%;
+	/*background-color:  #515151;*/
+	display: inline-block;
+	height: 27px;
+	line-height: 27px;
+	text-align: center;
+	/*color: #007aff;*/
+	border-radius: 10px;
+}
+
+.insidiv-active {
+	color: #007aff;
+	background-color: #C4C4C4;
+}
+
+.ques-pear {
+	margin: 30px;
+}
+
+.ques-2 {
+	display: none;
+}
+
+.ques-3 {
+	display: none;
+}
+
+.ques-4 {
+	display: none;
+}
+
+.listmar {
+	float: right;
+	margin-right: 10px;
+}
+
+.insimg {
+	width: 100%;
+}
+
+.toptitle {
+	background-color: darkgrey;
+	color: white;
+	opacity: 0.8;
+}
+
+.loadingPage img {
+	width: 100%;
+}
+
+.wrap-list {
+	background-color: #fff;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.list-row {
+	border-bottom: 1px solid #ebebeb;
+	height: 30px;
+	line-height: 30px;
+	color: #838383
+}
+
+.com-title {
+	margin-left: 20px;
+	height: 30px;
+	line-height: 30px;
+}
+
+.com-name1 {
+	height: 55px;
+	width: 37%;
+	background-color: #fff;
+	margin: 5px 5px 5px 0px;
+}
+
+.com-name {
+	background-color: #007AFF;
+	height: 65px;
+}
+
+.fund2 {
+	height: 20px;
+}
+
+.list-top {
+	margin-top: 0px;
+}
+
+.head-top {
+	font-size: 17px;
+	color: #fff;
+	font-weight: 600;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background-image: url(../img/top-ques.jpg);
+	background-size: 100% 100%;
+}
+
+#question .list-block {
+	font-size: 12px
+}
+
+.quesname {
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #ebebeb;
+	margin-left: 20px;
+}
+
+.quesright {
+	float: right;
+	margin-right: 20px;
+}
+
+.quesleft {
+	margin-left: 20px;
+}
+
+.questop1 {
+	height: 40px;
+	line-height: 40px;
+	background-color: #C4C4C4;
+}
+
+.about-content {}
+
+.about-title {
+	/*border-bottom: 2px solid #C4C4C4;*/
+	height: 40px;
+	line-height: 50px;
+}
+
+.titlemar {
+	margin: 0px 10px;
+}
+
+.conmar {
+	margin: 15px 10px;
+}
+
+.topcolor1 {
+	color: red;
+}
+
+.topcolor2 {
+	color: blue;
+}
+
+.topcolor3 {
+	color: red;
+}
+
+.topcolor4 {
+	color: red;
+}
+
+
+/* tabbar */
+
+.tabbar i.icon {
+	height: 20px;
+	padding-top: 5px;
+}
+
+.tabbar-labels {
+	height: 50px;
+	background: #363b41;
+	background: -moz-linear-gradient(top, #363b41 0%, #34353a 50%, #2e2d33 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, #363b41), color-stop(50%, #34353a), color-stop(100%, #2e2d33));
+	background: -webkit-linear-gradient(top, #363b41 0%, #34353a 50%, #2e2d33 100%);
+	background: -o-linear-gradient(top, #363b41 0%, #34353a 50%, #2e2d33 100%);
+	background: -ms-linear-gradient(top, #363b41 0%, #34353a 50%, #2e2d33 100%);
+	background: linear-gradient(to bottom, #363b41 0%, #34353a 50%, #2e2d33 100%);
+}
+
+.tabbar-labels span.tabbar-label {
+	font-size: 14px;
+}
+
+
+/* 组合配置详情页面 */
+
+.tel-button {
+	font-size: 14px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	padding: 3px 5px;
+	border-radius: 3px;
+	color: #fff;
+	background: #061F3E;
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.home-button {
+	font-size: 16px;
+	left: 10px;
+	right: auto;
+}
+
+.acco-tip .fa {
+	color: #fff;
+}
+
+.allocate-scoll {
+	font-size: 12px;
+	margin-top: 0px;
+	height: 90%;
+	overflow-y: scroll;
+	background: #F0EFF5 !important
+}
+
+.allocate-list-title {
+	text-align: center;
+	color: #1761C2;
+	margin-top: 10px;
+	margin-bottom: 15px
+}
+
+.allocate-list-title span {
+	display: inline !important;
+	width: auto;
+	font-size: 18px !important;
+	padding: 2px 5px;
+	border-bottom: 3px solid #1761C2;
+}
+
+.allocate-scoll ul {
+	background: #F0EFF5 !important
+}
+
+.allocate-scoll ul:before,
+.allocate-scoll ul:after {
+	background-color: #fff;
+}
+
+.allocate-scoll li {
+	margin-top: 10px;
+	background: #fff
+}
+
+.allocate-scoll .item-title,
+.allocate-scoll .item-after {
+	color: #505050 !important
+}
+
+.allocate-menu img {
+	margin-top: -15px;
+}
+
+.allocate-menu i {
+	color: #000000;
+	margin-right: 25px;
+}
+
+.allocate-risk img {
+	width: 39%;
+	/*height: 45%;*/
+	margin-top: 20px;
+	/*margin-bottom: 30px;*/
+}
+
+.allocate-risk {
+	text-align: center;
+}
+
+.allocate-tip {
+	text-align: center;
+	color: #FFFFFF;
+	margin-top: 5px;
+}
+
+.allocate-rpn {
+	/*	font-weight: bolder;*/
+	font-size: 14px;
+	color: #C2C2C2;
+	margin-bottom: 5px
+}
+
+.allocate-info {
+	font-size: 16px
+}
+
+.allocate-fund-mix {
+	background-color: #FFFFFF;
+	/*height: 250px;*/
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	height: 57%;
+}
+
+.allocate-slider {
+	/*position:absolute;
+	left:0px;
+	bottom: 0px;
+	width: 100%;*/
+	height: 50%;
+}
+
+.searchli {
+	text-align: center;
+	color: #007aff;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.searchtop {
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+
+/* 基金列表 */
+
+.fundfilter {
+	color: #505050
+}
+
+.fundfilter-title {
+	background-image: url(../img/top-ques.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.rankfilter a:nth-child(1)::before {
+	content: "1";
+	font-size: 8px;
+	color: #fff;
+	left: 2px;
+	position: absolute;
+	z-index: 999;
+	font-weight: 100
+}
+
+.rankfilter a:nth-child(2)::before {
+	content: "2";
+	font-size: 8px;
+	color: #fff;
+	left: 2px;
+	position: absolute;
+	z-index: 999;
+	font-weight: 100
+}
+
+.rankfilter a:nth-child(3)::before {
+	content: "3";
+	font-size: 8px;
+	color: #fff;
+	left: 2px;
+	position: absolute;
+	z-index: 999;
+	font-weight: 100
+}
+
+
+/* 筛选panel */
+
+.fundfilter .navbar {
+	background: #F0EFF5;
+	color: #1761C5;
+}
+
+.fundfilter .navbar:after {
+	background: #F0EFF5
+}
+
+.fundfilter .navbar .close-panel {
+	color: #505050
+}
+
+
+/* 对比 */
+
+#compare-form .list-block .item-title {
+	font-size: 14px
+}
+
+.qian {
+	border-bottom: 2px solid #007aff;
+	width: 60px;
+	display: block;
+	float: left;
+	margin-left: 9px;
+	position: relative;
+	bottom: -2px;
+}
+
+.hou {
+	border-bottom: 2px solid #C4C4C4;
+	display: block;
+	width: 90%;
+	float: right;
+	margin-right: 9px;
+}
+
+.col-37 {
+	text-align: center !important;
+	width: 37%;
+	word-break: break-all;
+}
+
+.col-50 {
+	width: 50% !important;
+}
+
+.footpanel {
+	position: fixed;
+	bottom:0;
+	left: 0;
+	z-index: 9999;
+	background:#ffcc00;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+}
+.call-suprise{
+	color:#FFFFFF ;
+	background-color: #ff3b30;
+	display: inline-block;
+    height:25px;
+    line-height:25px;
+    vertical-align: middle;
+    border-radius: 4px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+.user-iconc{
+	color: #363B41;
+	font-size: 35px;
+	margin: auto;
+	vertical-align: middle;
+	padding-left: 10px;
+    padding-right: 3px;
+}

@@ -1,0 +1,45 @@
+<ion-view view-title="" hide-nav-bar="true">
+	<ion-content class="" ng-init="Ctrl.init()">
+
+		<!--地区列表-->
+		<div class="xrea">
+			<span class="" id="insightAll" ng-click="getInfosList(0)"><div class="insidiv" ng-class="isActive(0)">全部</div></span>
+			<span class="insispan insightArea1" ng-repeat="a in areasList" ng-click="getInfosList({{a.areaID}})">
+               <div class="insidiv" ng-class="isActive({{a.areaID}})">{{a.areaValue}}</div>
+            </span>
+		</div>
+		<!--顶部新闻-->
+		<div id="insightTop">
+			<a ng-repeat="t in infoTop" href="#/insights/insights-detail?extURI={{t.infoLink | encodeURI}}" class="item-link item-content insi-linktop">
+				<div style="position: relative; ">
+					<img class="insimg " ng-src="{{t.infoImg}} " />
+					<div class="toptitle " style="position:absolute;bottom:5px; ">
+						<div style="margin-left: 20px;margin-right: 20px;white-space: initial;">
+							{{t.infoTitle}}&nbsp;&nbsp;【{{t.infoDate}}】
+						</div>
+					</div>
+				</div>
+
+			</a>
+		</div>
+		<!--</div>-->
+		<!--情报列表-->
+		<div id="insightlist" class="">
+			<div ng-repeat="t in infosList track by $index" class="list insty">
+				<!--<li class="item">-->
+				<a href="#/insights/insights-detail?extURI={{t.infoLink | encodeURI}} " class="item item-thumbnail-left" style="border-top: none;">
+					<img ng-src="{{t.infoImg}} " width="80 ">
+
+					<div class="" style="white-space: normal; ">{{t.infoTitle}}</div>
+
+					<p class="sed-are" style="">{{t.infoDate}}<span class="listmar" id="areaSegment ">{{t.infoAreaValue}}</span></p>
+
+				</a>
+				<!--</li>-->
+
+			</div>
+		</div>
+		<ion-infinite-scroll ng-if="state" on-infinite="loadMore()">
+		</ion-infinite-scroll>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,42 @@
+<ion-view view-title="境外基金" hide-nav-bar="false">
+	<ion-content class="" ng-init="Ctrl.init()">
+		<div class="navbar">
+			<div class="navbar-inner">
+
+			</div>
+		</div>
+		<div class="pages">
+			<div class="page no-navbar no-toolbar" data-page="comparePare">
+				<div class="page-content">
+					<div class="com-title">请选择两支基金对比</div>
+
+					<!--基金对比列表-->
+					<ion-list>
+
+						<ion-item ng-repeat="item in comList" class="item-remove-animate listy">
+							<label class="checkbox">
+							<input name="comli" style="display: inline-block;" type="checkbox" class="checkbox-icon" ng-value="{{item.ISIN}}" ng-model="aaa"/>
+							{{ item.fundNameC }}</label>
+
+							<ion-option-button class="button-assertive" ng-click="onItemDelete(item)">
+								删除
+							</ion-option-button>
+
+						</ion-item>
+
+					</ion-list>
+					<ul class="com-list"><a style="color: #939398;" href="#/tab/fund">+添加</a></ul>
+
+					<div ng-click="compare({{ooo}})">
+						<div>开始对比</div>
+						<!--<a class="button" href="#/compareDetail">开始对比</a>-->
+					</div>
+					{{aaa[0]}}
+
+				</div>
+
+			</div>
+
+		</div>
+	</ion-content>
+</ion-view>

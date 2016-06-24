@@ -1,0 +1,32 @@
+<ion-header-bar align-title="center" class="bar-positive">
+<button ng-click="" class="button button-icon"><i class="icon ion-chevron-left" style="width: 10px !important;"></i>返回详情</button>
+	
+
+	<h1 class="title">五大区域</h1>
+
+
+
+</ion-header-bar>
+<ion-view view-title="五大区域" hide-nav-bar="true">
+	<ion-content class="" style="" ng-init="Ctrl.init()">
+
+		<div id="area-chart" class="chart-huan"></div>
+		<div class="list">
+
+			<a class="item">				
+				<span>区域名称</span>
+				<span style="float: right;">
+          	  区域占比
+          </span>
+			</a>
+
+			<a class="item item-icon-left" ng-repeat="item in areaItems">
+				<i class="icon ion-stop iconzfx" style="color:#{{item.color}}"></i> {{item.areaName}}
+				<span class="item-note">
+            {{item.areaValue}}&#37;
+          </span>
+			</a>
+		</div>
+
+	</ion-content>
+</ion-view>

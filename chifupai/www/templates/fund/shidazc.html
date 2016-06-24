@@ -1,0 +1,35 @@
+<ion-header-bar align-title="center" class="bar-positive">
+<button ng-click="" class="button button-icon"><i class="icon ion-chevron-left" style="width: 10px !important;"></i>返回详情</button>
+	
+
+	<h1 class="title">十大重仓</h1>
+
+
+
+</ion-header-bar>
+<ion-view view-title="十大重仓" hide-nav-bar="true">
+	<ion-content class="" style="" ng-init="Ctrl.init()">
+
+		<div class="no-data-display">暂无数据</div>
+					
+						<div id="stock-chart" class="chart-huan"></div>
+				
+		<div class="list">
+
+			<a class="item">				
+				<span>持仓名称</span>
+				<span style="float: right;">
+          	  持仓占比
+          </span>
+			</a>
+
+			<a class="item item-icon-left" ng-repeat="item in stockItems">
+				<i class="icon ion-stop iconzfx" style="color:#{{item.color}}"></i> {{item.fundStockName}}
+				<span class="item-note">
+            {{item.fundStockValue}}&#37;
+          </span>
+			</a>
+		</div>
+
+	</ion-content>
+</ion-view>

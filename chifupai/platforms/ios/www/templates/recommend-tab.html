@@ -1,0 +1,58 @@
+<ion-view view-title="" hide-nav-bar="true">
+<ion-content class="" style="background-image:url(img/backdrop.png); color:white;" ng-init="Ctrl.init()">
+                              <div class="index-earth-outer">
+                                      <div class="index-earth-middle">
+                                             <a href="#/recommend/question">
+                                              <img class="index-earth index-go" src="img/diqiu.png" />
+                                             </a>
+                                              <!--<div class="index-arrows index-none index-go">>>></div>-->
+                                              <!--<div class="index-arrows"><a href="html/allocation.html">>>></a></div>-->
+                                      </div>
+                                      <div class="index-turn">开启我的资产配置</div>
+                              </div>
+                              <!-- Spin Demo 
+                              <div class="index-box-outer" ng-show="purposesList == null">
+                                 <p>Loading...</p><ion-spinner></ion-spinner>
+                              </div>
+                              -->
+                              <div class="index-box-outer" ng-show="purposesList != null">
+                                      <div class="">
+                                              <div class="index-box row">
+                                                 <div class="col-50" id="purpose1">
+                                                    <a ng-href="#/recommend/recommend-list/{{purposesList[0]['purposeID']}}">
+                                                       <img ng-src="{{purposesList[0]['purposeImg']}}">
+                                                    </a>
+                                                 </div>
+                                                 <div class="col-50" id="purpose2">
+                                                    <a ng-href="#/recommend/recommend-list/{{purposesList[1]['purposeID']}}">
+                                                       <img ng-src="{{purposesList[1]['purposeImg']}}">
+                                                    </a>
+                                                 </div>
+                                              </div>
+                                              <div class="index-box row">
+                                                 <div class="col-50" id="purpose3">
+                                                    <a ng-href="#/recommend/recommend-list/{{purposesList[2]['purposeID']}}">
+                                                       <img ng-src="{{purposesList[2]['purposeImg']}}">
+                                                    </a>
+                                                 </div>
+                                                 <div class="col-50" id="purpose4">
+                                                    <a ng-href="#/recommend/recommend-list/{{purposesList[3]['purposeID']}}">
+                                                       <img ng-src="{{purposesList[3]['purposeImg']}}">
+                                                    </a>
+                                                 </div>
+                                              </div>
+
+                                              <div id="">
+                                                      <ion-slide-box auto-play="true" does-continue="true" on-slide-changed="Ctrl.slideChanged(index)">
+                                                        <ion-slide  ng-repeat="item in oppsList" >
+                                                            <a ng-href="#/recommend/oppo-detail/{{item.oppID}}">
+                                                               <img ng-src="{{item.oppImg}}"/>
+                                                            </a>
+                                                        </ion-slide>
+                                                      </ion-slide-box>
+                                              </div>
+
+                                      </div>
+                              </div>
+  </ion-content>
+</ion-view>

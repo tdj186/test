@@ -1,0 +1,66 @@
+<ion-view view-title="境外基金" hide-nav-bar="false">
+  <ion-content class="" ng-init="Ctrl.init()">
+      <!-- Page, "data-page" contains page name -->
+      <div data-page="fundList" class="page">
+              <!-- Top Navbar-->
+              <div id="searchbar" class="searchk">
+                      <!-- Search bar -->
+                      <form id="fast-form" class="searchbar searchbar-active searchbar-not-empty store-data" onsubmit="return false;">
+                              <div class="searchbar-input">
+                                      <input class="search-keyword" placeholder="请输入基金代码或简称" name="keyword" type="search">
+                              </div>
+                              <a href="#" class="button active searchbar-ok search-button">确定</a>
+                      </form>
+                      <br />
+                      <div>
+                              <div class="searchtop">热门搜索</div>
+                              <div class="searchli searchCriteria">美国高收益债</div>
+                              <div class="searchli searchCriteria">富兰克林</div>
+                      </div>
+                      <div class="back-list" style="width: 50%;margin: auto;margin-top: 50px;">
+                              <a href="#" class="button active">返回列表</a>
+                      </div>
+                      
+                      <!-- Search bar overlay -->
+                      <!--<div class="searchbar-overlay"></div>-->
+              </div>
+              <div class="page-content infinite-scroll">
+                      <!--首页基金列表-->
+                      <div id="fund-list-block" class='item-link item-content'>
+                              <!--筛选搜索条件-->
+                              <div id="condition1" class="col-90 dd"></div>
+                              <div style="margin-top: 7px">
+                              <div class="row no-gutter item-inner table-header">
+                                      <div class="col-45 col-left"> 最新净值 </div>
+                                      <div class="col-20 col-right"> 最新日期 </div>
+                                      <div class="col-35 col-right"> <a href="#" data-popover=".popover-links" class="open-popover data-search"><span id="fundIncsRateLabel">近一个月</span> <i class="fa fa-angle-down"></i></a> </div>
+                              </div>
+                              </div>
+                              <!--<a href="html/fund-details.html">hhrhhhh</a>-->
+                              <!--结果列表 -->
+                              <div id="fund-list-result" class="no-gutter rankfilter" style="margin-top: 7px">
+                                 <a ng-repeat="f in fundsList" href="#/fund/fund-details?ISIN={{f.isin | encodeURI}}" class="item-link item-content" >
+
+                                                      <div class="table-list">
+                                                              <div class="table-fundname fundl">
+                                                                      <div class="{{f.bj}}">
+                                                                      </div>
+                                                                      <span style="margin-left: 20px;">{{f.fundNameC}}</span> 
+                                                              </div>
+                                                              <div class="row no-gutter fund2" style="text-align: center;width: 80%;margin: auto;">
+                                                                      <div class="col-35 table-funddate">{{f.fundNet}} {{f.currencyValue}}	</div>
+                                                                      <div class="col-35 table-funddate"> {{f.fundNetDate}} </div>
+                                                                      <div class="col-30 table-rata"> <i class="{{f.incsClass}}">{{f.fundIncsRate}}&#37;</i> </div>
+                                                              </div>
+
+                                                      </div>
+                                              </a>
+                              </div>
+                              <div class="infinite-scroll-preloader">
+                                      <div class="preloader"></div>
+                              </div>
+                      </div>
+              </div>
+      </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,43 @@
+<ion-view view-title="" hide-nav-bar="true">
+  <ion-content class="" style="" ng-init="Ctrl.init()">
+   <div class="page no-navbar no-toolbar" data-page="recolist">
+           <div class="footpanel">
+                   <i class="fa fa-user user-iconc"></i>
+                   <span>专业投顾为您定制海外基金投资方案&nbsp;&nbsp;</span
+                   <a href="tel:02151215988" class="external"><span class="call-suprise">惊喜连线</span> </a
+           </div>
+   </div>
+
+           <!--<div>{{data.purposeTitle}}</div>-->
+           <div style="line-height: 0;" ng-repeat="img in data.purposeImgs">
+                   <img style="width: 100%;" ng-src="{{img.imgURL}}" />
+           </div>
+           <div style="border-top: 7px solid #F0EFF5">
+           <div class="row no-gutter item-inner table-header">
+                   <div class="col-45 col-left"> 最新净值</div>
+                   <div class="col-20 col-right"> 最新日期 </div>
+                   <div class="col-35 col-right"> <a href="#" data-popover=".popover-links" class="open-popover data-search"><span class="fundIncsRateLabel">近一个月</span> <i class="fa fa-angle-down"></i></a> </div>
+           </div>
+           </div>
+           <div style="border-top: 7px solid #F0EFF5">
+           <a href="html/fund/fund-details.html?ISIN={{isin}}" class="item-link item-content" ng-repeat="d in data.fundsList">
+
+                   <div class="table-list">
+                           <div class="table-fundname fundl">
+                                   <span style="margin-left: 20px;">{{d.fundNameC}}</span>
+                           </div>
+                           <div class="row no-gutter fundl" style="text-align: center;width: 80%;margin: auto;">
+                                   <div class="col-35 table-funddate">{{d.fundNet}} {{d.currencyValue}} </div>
+                                   <div class="col-30 table-funddate"> {{d.fundNetDate}} </div>
+                                   <div class="col-35 table-rata"> <i class="{{d.incsClass}}">{{d.fundIncsm}}{{d.areaValue}}&#37;</i> </div>
+                           </div>
+
+                   </div>
+           </a>
+           </div>
+
+
+
+
+  </ion-content>
+</ion-view>
